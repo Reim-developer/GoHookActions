@@ -1,6 +1,10 @@
 name: "Send Discord webhook via TOML configuration."
 description: "A GitHub Action to send a Discord webhook using a user-provided TOML config file."
 
+branding:
+  icon: "zap"
+  color: "gray-dark"
+
 inputs:
   config:
     description: "Path to your TOML configuration file that defines the Discord webhook payload."
