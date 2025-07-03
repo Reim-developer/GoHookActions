@@ -10,6 +10,11 @@ inputs:
     description: "Path to your TOML configuration file that defines the Discord webhook payload."
     required: true
 
+  use-cli-version:
+    description: "Version of CLI binary to download and use. Defaults to 'latest'."
+    required: false
+    default: "latest"
+
 runs:
   using: "node20"
   main: "dist/index.js"
