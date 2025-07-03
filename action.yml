@@ -1,0 +1,11 @@
+name: "Send Discord webhook via TOML configuration."
+description: "A GitHub Action to send a Discord webhook using a user-provided TOML config file."
+
+inputs:
+  config:
+    description: "Path to your TOML configuration file that defines the Discord webhook payload."
+    required: true
+
+runs:
+  using: "node20"
+  main: "dist/main.js"
