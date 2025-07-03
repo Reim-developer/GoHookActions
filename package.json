@@ -1,6 +1,6 @@
 {
   "name": "go_hook",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "An Action for notification new release to your Discord webhook",
   "main": "dist/main.js",
   "scripts": {
