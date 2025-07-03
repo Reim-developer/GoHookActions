@@ -1,0 +1,15 @@
+{
+  "name": "go_hook",
+  "version": "1.0.0",
+  "description": "An Action for notification new release to your Discord webhook",
+  "main": "dist/main.js",
+  "scripts": {
+    "build": "tsc"
+  },
+  "author": "reim-developer",
+  "license": "GPL-3.0-only",
+  "private": false,
+  "dependencies": {
+    "@actions/core": "^1.11.1"
+  }
+}
