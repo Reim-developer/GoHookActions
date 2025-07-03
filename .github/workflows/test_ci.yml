@@ -1,0 +1,20 @@
+name: Test GoHook Actions
+
+on:
+    push:
+        branches:
+            - test-ci
+
+jobs:
+    test-gohook-actions:
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v4
+
+            - name: Run GoHook Actions
+              uses: reim-developer/GoHookActions@v0.0.1
+              with:
+                config:
+                    myWrongConfig.toml # Test fatal error FIRST.
