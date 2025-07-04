@@ -5,6 +5,8 @@ import BinaryManager from "../binaryManger";
     let versionTag = await binaryManger.GetLatestVersion();
 
     if (versionTag != null) {
-        console.log(`Latest version of GoHook ${versionTag}`);
+        console.log(`Latest version of GoHook is: ${versionTag}`);
+    } else {
+        throw ("[Latest Version Test] Test failed, versionTag maybe null or undefined.")
     }
 })();
