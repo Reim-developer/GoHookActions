@@ -1,3 +1,6 @@
 import ActionManager from "./actionManager";
 
-void new ActionManager().run()
+(async function () {
+    let actionManager = new ActionManager();
+    await actionManager.run();
+})();
