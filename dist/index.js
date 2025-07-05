@@ -26424,7 +26424,7 @@ class ActionManager {
             if (lastestVersionTag != null) {
                 await this.downloadManager.DownloadGoHookArchived(lastestVersionTag);
             }
-        });
+        })();
     }
 }
 exports["default"] = ActionManager;
