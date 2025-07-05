@@ -162,7 +162,7 @@ class DownloadManager {
         }
         this.downloadHelper(ASSET);
     }
-    async DownloadSpecifyVersionGoHook(versionTag) {
+    async DownloadGoHookArchived(versionTag) {
         const OS = this.detectOperatingSystem();
         if (OS == osEnum_1.default.Linux) {
             await this.linuxDownloadSpecifyVersion(versionTag);
