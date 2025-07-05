@@ -26422,7 +26422,7 @@ class ActionManager {
         (async () => {
             let lastestVersionTag = await this.binaryManager.GetLatestVersion();
             if (lastestVersionTag != null) {
-                this.downloadManager.DownloadGoHookArchived(lastestVersionTag);
+                await this.downloadManager.DownloadGoHookArchived(lastestVersionTag);
             }
         });
     }
