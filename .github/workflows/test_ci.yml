@@ -18,3 +18,8 @@ jobs:
               with:
                 config:
                     test.toml
+
+            - name: Test GoHook is already downloaded.
+              shell: bash
+              run: |
+                  ls 
