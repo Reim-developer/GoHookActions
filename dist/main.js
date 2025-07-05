@@ -4,4 +4,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const actionManager_1 = __importDefault(require("./actionManager"));
-void new actionManager_1.default().run();
+(async function () {
+    let actionManager = new actionManager_1.default();
+    await actionManager.run();
+})();
