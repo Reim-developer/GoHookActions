@@ -14,7 +14,7 @@ class ActionManager {
         this.binaryManager = new BinaryManager();
     }
 
-    public run(): void {
+    public async run(): Promise<void> {
         if (!this.configManager.IsValidConfigPath()) {
             const wrongConfigPath = this.configManager.configPath;
 
@@ -26,15 +26,12 @@ class ActionManager {
         actionCore.info(`Found your TOML configuration: ${configPath}`);
         actionCore.info("Started download GoHook archived:");
 
+        let lastestVersionTag = await this.binaryManager.GetLatestVersion();
 
+        if (lastestVersionTag != null) {
+            await this.downloadManager.DownloadGoHookArchived(lastestVersionTag);
+        }
 
-        (async () => {
-            let lastestVersionTag = await this.binaryManager.GetLatestVersion();
-
-            if (lastestVersionTag != null) {
-                await this.downloadManager.DownloadGoHookArchived(lastestVersionTag);
-            }
-        })();
     }
 }
 
