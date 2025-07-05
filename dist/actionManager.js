@@ -38,9 +38,13 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const configManager_1 = __importDefault(require("./configManager"));
 const actionCore = __importStar(require("@actions/core"));
+const downloadManager_1 = __importDefault(require("./downloadManager"));
+const binaryManger_1 = __importDefault(require("./binaryManger"));
 class ActionManager {
     constructor() {
         this.configManager = new configManager_1.default();
+        this.downloadManager = new downloadManager_1.default();
+        this.binaryManager = new binaryManger_1.default();
     }
     run() {
         if (!this.configManager.IsValidConfigPath()) {
@@ -49,7 +53,14 @@ class ActionManager {
             return;
         }
         const configPath = this.configManager.GetConfigPath();
-        actionCore.info(`${configPath}`);
+        actionCore.info(`Found your TOML configuration: ${configPath}`);
+        actionCore.info("Started download GoHook archived:");
+        (async () => {
+            let lastestVersionTag = await this.binaryManager.GetLatestVersion();
+            if (lastestVersionTag != null) {
+                this.downloadManager.DownloadGoHookArchived(lastestVersionTag);
+            }
+        });
     }
 }
 exports.default = ActionManager;
