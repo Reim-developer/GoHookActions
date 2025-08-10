@@ -7,7 +7,7 @@ function check_tools() {
     fi 
 }
 
-#  Warning: Use it for when release ready only.
+#  Warning: Use it for release only.
 function merge_all() {
     git switch master
     git merge dev master
